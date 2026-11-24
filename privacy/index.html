@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy — Screen Pause</title>
+  <meta name="description" content="How Screen Pause keeps settings, timing records and feedback on your Mac without accounts or tracking.">
+  <link rel="canonical" href="https://screenpause.melnikov.pl/privacy">
+  <link rel="icon" href="/icon.png">
+  <link rel="apple-touch-icon" href="/icon.png">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="legal-page">
+    <a class="legal-back" href="/">← Screen Pause</a>
+    <p class="section-label">Privacy</p>
+    <h1>Everything stays on your Mac.</h1>
+    <p class="legal-lead">
+      Screen Pause does not transmit or sell personal data. It has no account
+      system, analytics, advertising, telemetry, crash reporting, or network
+      communication.
+    </p>
+
+    <section>
+      <h2>Input permissions</h2>
+      <p>
+        In the direct-download build, macOS Accessibility and Input Monitoring
+        permissions are required solely to discard keyboard, mouse, trackpad,
+        scroll, and media-key events during an active pause. Event contents
+        are not recorded, inspected for text, written to disk, or transmitted.
+      </p>
+      <p>
+        The Mac App Store build runs inside App Sandbox and does not request
+        Accessibility or Input Monitoring permissions. During an active pause,
+        it presents standard macOS full-screen pause windows and handles only
+        local in-pause commands inside its own active window. Input is never
+        recorded, logged, written to disk, or transmitted.
+      </p>
+    </section>
+
+    <section>
+      <h2>Local data</h2>
+      <p>
+        The app stores the selected duration, Auto Pause settings including
+        any optional pause intention written by the user, suspension state,
+        keyboard shortcuts, and the start time, source, planned duration,
+        and actual time away for up to 200 recent pauses.
+      </p>
+      <p>
+        While Adaptive feedback is pending, the relevant series retains only
+        numeric work time, observed rest duration, and whether the blackout
+        was intentionally extended. That temporary context is cleared when
+        the feedback is resolved or discarded and contains no application or
+        input-event content.
+      </p>
+      <p>
+        Screen Pause also stores the current day’s active-use time,
+        completed pause time, ordered active-use segments containing start
+        time, end time, and duration, and aggregate Auto Pause responses.
+        Completed daily records are retained for the latest 30 local days;
+        older days are deleted automatically. These records contain no input
+        contents or application names.
+      </p>
+    </section>
+
+    <section>
+      <h2>Media</h2>
+      <p>
+        The direct-download build reads only whether macOS reports system
+        media as playing, so passive playback is not classified as rest and
+        playback can be paused during a break. It does not read or store
+        titles, artists, URLs, artwork, or playback history. The Mac App
+        Store build does not access media state.
+      </p>
+    </section>
+
+    <section>
+      <h2>Absence detection</h2>
+      <p>
+        A qualifying absence is derived only from elapsed time since the last
+        keyboard, mouse, or trackpad event. In the direct build, active media
+        playback prevents an absence from being classified as rest. In the
+        Mac App Store build, ordinary input inactivity is not inferred as
+        rest; explicit system sleep can count.
+      </p>
+    </section>
+
+    <section>
+      <h2>Scope</h2>
+      <p>
+        This statement applies to Screen Pause 1.6.68. All records remain on
+        the Mac and are never transmitted. The fixed 10-second
+        test pause is not added to Today or Pause History.
+      </p>
+    </section>
+
+    <section>
+      <h2>Support</h2>
+      <p>
+        Installation, permission, and emergency-release instructions are
+        available on the <a href="/support">public support page</a>.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
