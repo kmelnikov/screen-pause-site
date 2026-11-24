@@ -154,8 +154,8 @@
         <code>CFNetwork</code>, <code>Network.framework</code>, <code>WebKit</code>, or socket/URL session symbols are linked.
         After installing Screen Pause, you can check the binary directly in Terminal:
       </p>
-      <pre class="verify-code"><code>otool -L "/Applications/Screen Pause.app/Contents/MacOS/Screen Pause"
-nm -u "/Applications/Screen Pause.app/Contents/MacOS/Screen Pause" | grep -E "NSURLSession|CFNetwork|socket|connect"</code></pre>
+      <pre class="verify-code"><code>otool -L "/Applications/Screen Pause.app/Contents/MacOS/ScreenPause"
+nm -u "/Applications/Screen Pause.app/Contents/MacOS/ScreenPause" | grep -E "NSURLSession|CFNetwork|socket|connect"</code></pre>
       <p class="compare-copy">
         The second command prints nothing: no network frameworks, no telemetry SDKs, no license server calls.
       </p>
