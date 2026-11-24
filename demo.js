@@ -1,11 +1,14 @@
 (() => {
-  const trigger = document.getElementById("open-demo");
+  const triggers = document.querySelectorAll("[data-open-demo], #open-demo");
   const dialog = document.getElementById("pause-demo");
   const closeBtn = document.getElementById("demo-close");
   const timerEl = document.getElementById("demo-timer");
-  if (!trigger || !dialog || !closeBtn || !timerEl) return;
+  const progressBar = document.getElementById("demo-progress-bar");
+  if (!triggers.length || !dialog || !closeBtn || !timerEl) return;
 
+  const DURATION_MS = 10000;
   let timerId = null;
+  let lastTrigger = null;
 
   function stopDemo() {
     if (timerId !== null) {
@@ -14,23 +17,37 @@
     }
     document.body.classList.remove("pause-is-open");
     if (dialog.open) dialog.close();
+    if (lastTrigger && typeof lastTrigger.focus === "function") {
+      lastTrigger.focus();
+      lastTrigger = null;
+    }
   }
 
-  function updateCountdown(remaining) {
-    timerEl.textContent = `${remaining} seconds`;
-    timerEl.setAttribute("aria-label", `${remaining} seconds remaining`);
+  function updateCountdown(remainingMs) {
+    const remainingSec = Math.max(0, Math.ceil(remainingMs / 1000));
+    const unit = remainingSec === 1 ? "second" : "seconds";
+    timerEl.textContent = `${remainingSec} ${unit}`;
+    timerEl.setAttribute("aria-label", `${remainingSec} ${unit} remaining`);
+    if (progressBar) {
+      const pct = Math.max(0, Math.min(100, (remainingMs / DURATION_MS) * 100));
+      progressBar.style.width = `${pct}%`;
+    }
   }
 
-  trigger.addEventListener("click", () => {
-    const startedAt = Date.now();
-    updateCountdown(10);
-    dialog.showModal();
-    document.body.classList.add("pause-is-open");
-    timerId = window.setInterval(() => {
-      const remaining = Math.max(0, 10 - Math.floor((Date.now() - startedAt) / 1000));
-      updateCountdown(remaining);
-      if (remaining === 0) stopDemo();
-    }, 200);
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      if (dialog.open) return;
+      lastTrigger = trigger;
+      const startedAt = Date.now();
+      updateCountdown(DURATION_MS);
+      dialog.showModal();
+      document.body.classList.add("pause-is-open");
+      timerId = window.setInterval(() => {
+        const remainingMs = Math.max(0, DURATION_MS - (Date.now() - startedAt));
+        updateCountdown(remainingMs);
+        if (remainingMs === 0) stopDemo();
+      }, 100);
+    });
   });
 
   closeBtn.addEventListener("click", stopDemo);

@@ -26,28 +26,32 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="nav shell" id="top">
-    <a class="brand" href="#top" aria-label="Screen Pause home">
-      <span class="brand-mark" aria-hidden="true"><span></span></span>Screen Pause
-    </a>
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="#how-it-works">How it works</a>
-      <a href="#features">Series</a>
-      <a href="#rhythms">Modes</a>
-      <a href="#questions">FAQ</a>
-      <a href="/support">Support</a>
-    </nav>
-    <a class="nav-buy" href="https://melnikov28.gumroad.com/l/screen-pause-for-macos" target="_blank" rel="noopener noreferrer">Get Screen Pause <span aria-hidden="true">↗</span></a>
-  </header>
+  <div class="nav-wrap" id="top">
+    <header class="nav shell">
+      <a class="brand" href="#top" aria-label="Screen Pause home">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>Screen Pause
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#how-it-works">How it works</a>
+        <a href="#features">Series</a>
+        <a href="#rhythms">Modes</a>
+        <a href="#questions">FAQ</a>
+        <a href="/support">Support</a>
+      </nav>
+      <a class="nav-buy" href="https://melnikov28.gumroad.com/l/screen-pause-for-macos" target="_blank" rel="noopener noreferrer">Get Screen Pause <span aria-hidden="true">↗</span></a>
+    </header>
+  </div>
 
   <main id="main">
     <section class="hero shell" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow">For the “just one more thing” moment</p>
         <h1 id="hero-title">Take the break<em>you meant to take.</em></h1>
-        <p class="hero-intro">Choose your timing. Once a pause begins, Screen Pause covers every display
-          until it ends: the Direct DMG edition blocks normal keyboard, mouse and trackpad input system-wide,
-          while the upcoming Mac App Store edition uses active full-screen pause windows with local commands and no extra permissions.</p>
+        <p class="hero-intro">Choose your timing. Once a pause begins, Screen Pause covers every display until it ends — so you actually step away.</p>
+        <div class="edition-notes" aria-label="Editions">
+          <p><strong>Direct DMG:</strong> The Direct DMG edition blocks normal keyboard, mouse and trackpad input system-wide.</p>
+          <p><strong>Mac App Store (coming soon):</strong> The Mac App Store edition uses active full-screen pause windows with local commands and no extra permissions.</p>
+        </div>
         <p class="hero-control">Need to stop in an emergency? <kbd>Control–Option–Command–Escape</kbd> releases the pause.</p>
         <div class="store-links" aria-label="Get Screen Pause">
           <a class="store-button" href="https://melnikov28.gumroad.com/l/screen-pause-for-macos" target="_blank" rel="noopener noreferrer">
@@ -59,7 +63,10 @@
           </button>
         </div>
         <p class="purchase-note">USD · One-time purchase · No subscription</p>
-        <a class="hero-how text-link" href="#how-it-works">See when a pause starts <span aria-hidden="true">↓</span></a>
+        <div class="hero-actions">
+          <button class="text-button" data-open-demo type="button">Try a 10-second preview <span aria-hidden="true">→</span></button>
+          <a class="hero-how text-link" href="#how-it-works">See how it works <span aria-hidden="true">↓</span></a>
+        </div>
       </div>
       <figure class="hero-visual">
         <div class="app-stage">
@@ -112,7 +119,7 @@
         </figure>
       </div>
       <div class="demo-action">
-        <button class="text-button" id="open-demo" type="button">Try a 10-second browser preview <span aria-hidden="true">→</span></button>
+        <button class="text-button" id="open-demo" data-open-demo type="button">Try a 10-second browser preview <span aria-hidden="true">→</span></button>
         <p>Only this webpage dims; Escape exits. To try a real pause after installing, use Settings → Access → Test 10-second pause.</p>
       </div>
     </section>
@@ -339,7 +346,8 @@
     <div class="demo-center">
       <span class="demo-dot" aria-hidden="true"></span>
       <h2 id="demo-title">A little space.</h2>
-      <p id="demo-timer" role="timer" aria-label="10 seconds remaining">10 seconds</p>
+      <p id="demo-timer" role="timer" aria-live="off" aria-label="10 seconds remaining">10 seconds</p>
+      <div class="demo-progress" aria-hidden="true"><span id="demo-progress-bar"></span></div>
     </div>
     <p id="demo-description" class="demo-footnote">Browser preview · Only this page is dimmed. The Mac app covers every display.</p>
   </dialog>
