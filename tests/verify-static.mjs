@@ -16,6 +16,9 @@ test("CNAME, SEO discovery files, and static assets exist for screenpause.melnik
     "demo.js",
     "icon.png",
     "og-v2.png",
+    "demo-25s.mp4",
+    "demo-25s.webm",
+    "demo-25s-poster.jpg",
     "compare/index.html",
     "screenshots/manual-pause.jpg",
     "screenshots/auto-pause-series.png",
@@ -54,6 +57,10 @@ test("home page removes disabled MAS button leak, uses cookieless UTM attributio
   assert.match(home, /requires neither Accessibility nor Input Monitoring/);
   assert.match(home, /aria-label="Gumroad Direct DMG setup"/);
   assert.match(home, /<script src="\/demo\.js" defer><\/script>/);
+  assert.match(home, /id="demo-video"/);
+  assert.match(home, /src="\/demo-25s\.mp4"/);
+  assert.match(home, /src="\/demo-25s\.webm"/);
+  assert.match(home, /poster="\/demo-25s-poster\.jpg"/);
   assert.doesNotMatch(home, /apps\.apple\.com/);
   assert.doesNotMatch(home, /store-coming-soon/);
   assert.doesNotMatch(home, /lifetime updates|free updates forever|money-back guarantee|unlimited devices/i);

@@ -77,6 +77,10 @@ a.store-button:hover { background: #9d3523; border-color: #9d3523; }
 .section-heading > p:last-child:not(.section-label) { margin: 0; color: var(--ink-soft); }
 .how-section, .rhythms-section, .faq-section { padding-block: 96px; }
 .how-section .section-heading { grid-template-columns: 0.75fr 2.6fr; }
+.video-proof { margin-top: 40px; }
+.video-frame { border-radius: 16px; overflow: hidden; background: var(--night); box-shadow: 0 25px 65px rgba(24, 23, 20, 0.2); border: 1px solid var(--line); }
+.video-frame video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: var(--night); }
+.video-proof figcaption code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; color: var(--ink); }
 .steps { list-style: none; padding: 0; margin: 48px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; }
 .steps li { border-top: 1px solid var(--line); padding-top: 22px; }
 .step-number { display: block; color: var(--coral); font-size: 0.875rem; margin-bottom: 24px; }
