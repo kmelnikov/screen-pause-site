@@ -1,4 +1,29 @@
 (() => {
+  function sanitizeTag(value) {
+    if (!value) return "";
+    return value.trim().replace(/[^a-zA-Z0-9_-]/g, "").slice(0, 48);
+  }
+
+  function applyCookielessAttribution() {
+    const params = new URLSearchParams(window.location.search);
+    const source = sanitizeTag(params.get("utm_source") || params.get("ref"));
+    const medium = sanitizeTag(params.get("utm_medium"));
+    const campaign = sanitizeTag(params.get("utm_campaign"));
+    if (!source && !medium && !campaign) return;
+
+    document.querySelectorAll("a[data-gumroad-slot]").forEach((link) => {
+      const url = new URL(link.href);
+      if (source) url.searchParams.set("utm_source", source);
+      if (medium) url.searchParams.set("utm_medium", medium);
+      if (campaign) url.searchParams.set("utm_campaign", campaign);
+      const slot = sanitizeTag(link.getAttribute("data-gumroad-slot"));
+      if (slot) url.searchParams.set("utm_content", slot);
+      link.href = url.toString();
+    });
+  }
+
+  applyCookielessAttribution();
+
   const triggers = document.querySelectorAll("[data-open-demo], #open-demo");
   const dialog = document.getElementById("pause-demo");
   const closeBtn = document.getElementById("demo-close");

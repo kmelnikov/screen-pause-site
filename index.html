@@ -21,6 +21,29 @@
   <meta name="twitter:title" content="Screen Pause — Real breaks from your Mac">
   <meta name="twitter:description" content="Take the break you meant to take. Full-screen pauses with an emergency release, independent schedules and three modes. Offline. One-time purchase. macOS 13+.">
   <meta name="twitter:image" content="https://screenpause.melnikov.pl/og-v2.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Screen Pause",
+    "operatingSystem": "macOS 13 or later",
+    "applicationCategory": "ProductivityApplication",
+    "url": "https://screenpause.melnikov.pl/",
+    "image": "https://screenpause.melnikov.pl/og-v2.png",
+    "description": "Offline macOS break timer with full-screen pauses, independent merging work/rest series, Adaptive and Breathing rhythms, and build-verified zero networking.",
+    "offers": {
+      "@type": "Offer",
+      "price": "19.99",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://melnikov28.gumroad.com/l/screen-pause-for-macos"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Konstantin Melnikov"
+    }
+  }
+  </script>
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -35,10 +58,11 @@
         <a href="#how-it-works">How it works</a>
         <a href="#features">Series</a>
         <a href="#rhythms">Modes</a>
+        <a href="/compare">Compare</a>
         <a href="#questions">FAQ</a>
         <a href="/support">Support</a>
       </nav>
-      <a class="nav-buy" href="https://melnikov28.gumroad.com/l/screen-pause-for-macos" target="_blank" rel="noopener noreferrer">Get Screen Pause <span aria-hidden="true">↗</span></a>
+      <a class="nav-buy" data-gumroad-slot="nav" href="https://melnikov28.gumroad.com/l/screen-pause-for-macos?utm_source=screenpause_site&amp;utm_medium=web&amp;utm_content=nav" target="_blank" rel="noopener">Get Screen Pause <span aria-hidden="true">↗</span></a>
     </header>
   </div>
 
@@ -54,15 +78,13 @@
         </div>
         <p class="hero-control">Need to stop in an emergency? <kbd>Control–Option–Command–Escape</kbd> releases the pause.</p>
         <div class="store-links" aria-label="Get Screen Pause">
-          <a class="store-button" href="https://melnikov28.gumroad.com/l/screen-pause-for-macos" target="_blank" rel="noopener noreferrer">
-            <span>Get it on Gumroad <span class="store-price">— $19.99</span></span>
+          <a class="store-button" data-gumroad-slot="hero" href="https://melnikov28.gumroad.com/l/screen-pause-for-macos?utm_source=screenpause_site&amp;utm_medium=web&amp;utm_content=hero" target="_blank" rel="noopener">
+            <span>Get Direct DMG on Gumroad <span class="store-price">— $19.99</span></span>
             <span aria-hidden="true">↗</span>
           </a>
-          <button class="store-button store-coming-soon" type="button" disabled>
-            <span>Mac App Store</span><span class="store-status">Coming soon</span>
-          </button>
         </div>
-        <p class="purchase-note">USD · One-time purchase · No subscription</p>
+        <p class="purchase-note">USD · One-time purchase · No subscription · No account</p>
+        <p class="mas-note">Prefer the zero-permission Mac App Store edition? Currently in Apple review — <a href="mailto:kmelnikov+screenpause@gmail.com?subject=Notify%20me%20when%20Screen%20Pause%20is%20on%20the%20Mac%20App%20Store">email me when it launches →</a></p>
         <div class="hero-actions">
           <button class="text-button" data-open-demo type="button">Try a 10-second preview <span aria-hidden="true">→</span></button>
           <a class="hero-how text-link" href="#how-it-works">See how it works <span aria-hidden="true">↓</span></a>
@@ -252,7 +274,7 @@
           <h2 id="privacy-title">Your attention<br>is not data.</h2>
         </div>
         <div>
-          <p>The app has no accounts, analytics, advertising, telemetry or network communication. Settings, feedback and timing records stay on your Mac. It never records what you type or which apps you use.</p>
+          <p>The app has no accounts, analytics, advertising, telemetry or network communication. An automated build check verifies that no macOS networking frameworks are linked into the app binary. Settings, feedback and timing records stay on your Mac; it never records what you type or which apps you use.</p>
           <a class="text-link" href="/privacy">Read the full privacy statement <span aria-hidden="true">→</span></a>
         </div>
       </div>
@@ -317,15 +339,13 @@
           <li><strong>Choose your first pause</strong><span>Start manually or set up one series. Everything runs locally on your Mac.</span></li>
         </ol>
         <div class="store-links" aria-label="Get Screen Pause">
-          <a class="store-button" href="https://melnikov28.gumroad.com/l/screen-pause-for-macos" target="_blank" rel="noopener noreferrer">
-            <span>Get it on Gumroad <span class="store-price">— $19.99</span></span>
+          <a class="store-button" data-gumroad-slot="closing" href="https://melnikov28.gumroad.com/l/screen-pause-for-macos?utm_source=screenpause_site&amp;utm_medium=web&amp;utm_content=closing" target="_blank" rel="noopener">
+            <span>Get Direct DMG on Gumroad <span class="store-price">— $19.99</span></span>
             <span aria-hidden="true">↗</span>
           </a>
-          <button class="store-button store-coming-soon" type="button" disabled>
-            <span>Mac App Store</span><span class="store-status">Coming soon</span>
-          </button>
         </div>
         <p class="purchase-note">USD · One-time purchase · macOS 13+ · Apple silicon &amp; Intel</p>
+        <p class="mas-note mas-note-center">Prefer the zero-permission Mac App Store edition? Currently in Apple review — <a href="mailto:kmelnikov+screenpause@gmail.com?subject=Notify%20me%20when%20Screen%20Pause%20is%20on%20the%20Mac%20App%20Store">email me when it launches →</a></p>
         <a class="closing-help text-link" href="/support">Installation &amp; purchase support <span aria-hidden="true">→</span></a>
       </div>
     </section>
@@ -335,6 +355,7 @@
     <a class="brand" href="#top">Screen Pause</a>
     <p>Made by Konstantin Melnikov.</p>
     <nav aria-label="Footer navigation">
+      <a href="/compare">Compare</a>
       <a href="#evidence">Research</a>
       <a href="/privacy">Privacy</a>
       <a href="/support">Support</a>
